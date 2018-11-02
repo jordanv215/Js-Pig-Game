@@ -25,3 +25,9 @@ dice = Math.floor(Math.random() * 6) + 1;
 document.querySelector('#current-' + activePlayer).textContent = dice;
 // i'm going to leave this example below in there for future reference if I want to style the text there more
 // document.querySelector('#current-' + activePlayer).innerHTML = '<h1 class="dice-text">' + dice + '</h1>';
+
+var x = document.querySelector('#score-0').textContent;
+console.log(x);
+
+// using selector to hide the dice originally
+document.querySelector('.dice').style.display = 'none';
