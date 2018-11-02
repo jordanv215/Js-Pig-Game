@@ -66,3 +66,8 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 document.querySelector('#current-' + activePlayer).textContent = dice;
 // i'm going to leave this example below in there for future reference if I want to style the text there more
 // document.querySelector('#current-' + activePlayer).innerHTML = '<h1 class="dice-text">' + dice + '</h1>';
+
+
+
+
+//TODO: add alerts for name selection, add shot indicators, maybe some extra images, change background
