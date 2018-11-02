@@ -51,6 +51,8 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     } else {
         // go to other player
         activePlayer  === 0 ? activePlayer = 1 : activePlayer = 0;
+        // reset current score to 0
+        roundScores = 0;
     }
 });
 
