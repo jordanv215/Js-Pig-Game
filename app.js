@@ -9,3 +9,12 @@ GAME RULES:
 
 */
 
+// adding variables
+var scores;
+var roundScores;
+var activePlayer;
+
+
+scores = [0,0];
+roundScores = 0;
+activePlayer = 0;
