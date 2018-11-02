@@ -18,3 +18,7 @@ var activePlayer;
 scores = [0,0];
 roundScores = 0;
 activePlayer = 0;
+
+// dice variables
+dice = Math.floor(Math.random() * 6) + 1;
+console.log(dice);
