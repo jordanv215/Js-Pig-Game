@@ -17,9 +17,11 @@ var activePlayer;
 
 scores = [0,0];
 roundScores = 0;
-activePlayer = 0;
+activePlayer = 1;
 
 // dice variables
 dice = Math.floor(Math.random() * 6) + 1;
 
 document.querySelector('#current-' + activePlayer).textContent = dice;
+// i'm going to leave this example below in there for future reference if I want to style the text there more
+// document.querySelector('#current-' + activePlayer).innerHTML = '<h1 class="dice-text">' + dice + '</h1>';
