@@ -17,7 +17,7 @@ var activePlayer;
 
 scores = [0,0];
 roundScores = 0;
-activePlayer = 1;
+activePlayer = 0;
 
 var x = document.querySelector('#score-0').textContent;
 console.log(x);
@@ -44,9 +44,13 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 
     console.log(dice);
 
-
-
     // update the round score if it's not a 1
+    if(dice > 1) {
+       roundScores += dice;
+       document.querySelector('#current-' + activePlayer).textContent = roundScores;
+    } else {
+
+    }
 });
 
 document.querySelector('#current-' + activePlayer).textContent = dice;
