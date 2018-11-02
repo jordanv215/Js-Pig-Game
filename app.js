@@ -22,4 +22,4 @@ activePlayer = 0;
 // dice variables
 dice = Math.floor(Math.random() * 6) + 1;
 
-document.querySelector('#current-0').textContent = dice;
+document.querySelector('#current-' + activePlayer).textContent = dice;
