@@ -49,7 +49,8 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
        roundScores += dice;
        document.querySelector('#current-' + activePlayer).textContent = roundScores;
     } else {
-
+        // go to other player
+        activePlayer  === 0 ? activePlayer = 1 : activePlayer = 0;
     }
 });
 
