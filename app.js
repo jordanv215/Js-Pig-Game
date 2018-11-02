@@ -25,6 +25,13 @@ console.log(x);
 // using selector to hide the dice originally
 document.querySelector('.dice').style.display = 'none';
 
+// changing the original score numbers
+document.getElementById('score-0').textContent = 0;
+document.getElementById('score-1').textContent = 0;
+document.getElementById('current-0').textContent = 0;
+document.getElementById('current-1').textContent = 0;
+
+
 // making the roll button work
 document.querySelector('.btn-roll').addEventListener('click', function() {
     // get random number
