@@ -21,4 +21,5 @@ activePlayer = 0;
 
 // dice variables
 dice = Math.floor(Math.random() * 6) + 1;
-console.log(dice);
+
+document.querySelector('#current-0').textContent = dice;
