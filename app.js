@@ -49,19 +49,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
        roundScores += dice;
        document.querySelector('#current-' + activePlayer).textContent = roundScores;
     } else {
-        // go to other player
-        activePlayer  === 0 ? activePlayer = 1 : activePlayer = 0;
-        // reset current score to 0
-        roundScores = 0;
-        document.getElementById('current-0').textContent = '0';
-        document.getElementById('current-1').textContent = '0';
-
-        // adding the active class dynamically
-        document.querySelector('.player-0-panel').classList.toggle('active');
-        document.querySelector('.player-1-panel').classList.toggle('active');
-        
-
-        document.querySelector('.dice').style.display = 'none';
+        nextPlayer()
     }
 });
 
@@ -73,7 +61,25 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
     // check if player won the game
+
+    nextPlayer()
 })
+
+function nextPlayer() {
+    // go to other player
+    activePlayer  === 0 ? activePlayer = 1 : activePlayer = 0;
+    // reset current score to 0
+    roundScores = 0;
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+
+    // adding the active class dynamically
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+    
+
+    document.querySelector('.dice').style.display = 'none';
+}
 
 document.querySelector('#current-' + activePlayer).textContent = dice;
 // i'm going to leave this example below in there for future reference if I want to style the text there more
