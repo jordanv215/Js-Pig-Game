@@ -14,22 +14,32 @@ var scores;
 var roundScores;
 var activePlayer;
 
+function newGame() {
+    scores = [0,0];
+    roundScores = 0;
+    activePlayer = 0;
 
-scores = [0,0];
-roundScores = 0;
-activePlayer = 0;
+    // using selector to hide the dice originally
+    document.querySelector('.dice').style.display = 'none';
+
+    // changing the original score numbers
+    document.getElementById('score-0').textContent = 0;
+    document.getElementById('score-1').textContent = 0;
+    document.getElementById('current-0').textContent = 0;
+    document.getElementById('current-1').textContent = 0;
+
+    // reset player names on new game
+    document.getElementById('name-0').textContent = 'Player 1';
+    document.getElementById('name-1').textContent = 'Player 2';
+
+}
+
+newGame();
 
 var x = document.querySelector('#score-0').textContent;
 console.log(x);
 
-// using selector to hide the dice originally
-document.querySelector('.dice').style.display = 'none';
 
-// changing the original score numbers
-document.getElementById('score-0').textContent = 0;
-document.getElementById('score-1').textContent = 0;
-document.getElementById('current-0').textContent = 0;
-document.getElementById('current-1').textContent = 0;
 
 
 // making the roll button work
@@ -88,11 +98,10 @@ function nextPlayer() {
     document.querySelector('.dice').style.display = 'none';
 }
 
-document.querySelector('#current-' + activePlayer).textContent = dice;
+// document.querySelector('#current-' + activePlayer).textContent = dice;
 // i'm going to leave this example below in there for future reference if I want to style the text there more
 // document.querySelector('#current-' + activePlayer).innerHTML = '<h1 class="dice-text">' + dice + '</h1>';
 
-
-
+document.querySelector('.btn-new').addEventListener('click', newGame);
 
 //TODO: add prompts for name selection, add shot indicators, maybe some extra images, change background
