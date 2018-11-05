@@ -13,6 +13,7 @@ GAME RULES:
 var scores;
 var roundScores;
 var activePlayer;
+var gameStatus;
 
 function newGame() {
     scores = [0,0];
@@ -37,7 +38,7 @@ function newGame() {
     document.querySelector('.player-1-panel').classList.remove('winner');
     document.querySelector('.player-0-panel').classList.remove('active');
     document.querySelector('.player-1-panel').classList.remove('active');
-    document.querySelector('player-0-panel').classList.add('active');
+    document.querySelector('.player-0-panel').classList.add('active');
 }
 
 newGame();
@@ -46,27 +47,29 @@ var x = document.querySelector('#score-0').textContent;
 console.log(x);
 
 
-
-
 // making the roll button work
 document.querySelector('.btn-roll').addEventListener('click', function() {
-    // get random number
-    var dice = Math.floor(Math.random() * 6) + 1;
+    if(gameStatus) {
+        // get random number
+        var dice = Math.floor(Math.random() * 6) + 1;
 
-    // display the result
-    var diceObject = document.querySelector('.dice')
-    diceObject.style.display = 'block';
-    diceObject.src = 'dice-' + dice + '.png';
+        // display the result
+        var diceObject = document.querySelector('.dice')
+        diceObject.style.display = 'block';
+        diceObject.src = 'dice-' + dice + '.png';
 
-    console.log(dice);
+        console.log(dice);
 
-    // update the round score if it's not a 1
-    if(dice > 1) {
-       roundScores += dice;
-       document.querySelector('#current-' + activePlayer).textContent = roundScores;
-    } else {
-        nextPlayer()
+        // update the round score if it's not a 1
+        if(dice > 1) {
+        roundScores += dice;
+        document.querySelector('#current-' + activePlayer).textContent = roundScores;
+        } else {
+            nextPlayer();
+        }
     }
+
+
 });
 
 document.querySelector('.btn-hold').addEventListener('click', function() {
@@ -111,3 +114,4 @@ function nextPlayer() {
 document.querySelector('.btn-new').addEventListener('click', newGame);
 
 //TODO: add prompts for name selection, add shot indicators, maybe some extra images, change background
+// add game rules as modal
