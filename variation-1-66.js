@@ -92,12 +92,19 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         // update interface
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-
         // getting input field
         var input = document.querySelector('.final-score').value;
+        var scoreToWin;
+
+        // checking if input field is empty
+        if(input) {
+            var scoreToWin = input;
+        } else {
+            scoreToWin = 20;
+        }
 
         // check if player won the game
-        if(scores[activePlayer] >= input) {
+        if(scores[activePlayer] >= scoreToWin) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
