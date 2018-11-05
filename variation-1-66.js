@@ -14,6 +14,7 @@ var scores;
 var roundScores;
 var activePlayer;
 var gameStatus;
+var prevRoll;
 
 function newGame() {
     scores = [0,0];
@@ -61,13 +62,23 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 
         console.log(dice);
 
+
+        // if both rolls were a 6, reset total score
+        if(dice === 6 && prevRoll === 6) {
+            scores[activePlayer] = 0;
+            document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+            nextPlayer();
+        }
         // update the round score if it's not a 1
-        if(dice > 1) {
+        else if(dice > 1) {
         roundScores += dice;
         document.querySelector('#current-' + activePlayer).textContent = roundScores;
         } else {
             nextPlayer();
         }
+
+        // storing last roll
+        prevRoll = dice;
     }
 
 
