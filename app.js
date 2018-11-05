@@ -19,6 +19,7 @@ function newGame() {
     scores = [0,0];
     roundScores = 0;
     activePlayer = 0;
+    gameStatus = true;
 
     // using selector to hide the dice originally
     document.querySelector('.dice').style.display = 'none';
@@ -86,7 +87,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
-            gameStatus = 0;
+            gameStatus = false;
         } else {
             nextPlayer();
         }
